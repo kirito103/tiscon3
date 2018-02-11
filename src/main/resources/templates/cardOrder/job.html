@@ -33,18 +33,6 @@
                                     <label>＊お勤め先名 例:株式会社◯◯　→　◯◯</label>
                                     <input type="text" name="employerName" th:value="${form.employerName}"/>
                                 </div>
-                                <div class="field" th:classappend="${form.hasErrors('employerZipCode')} ? 'error'">
-                                    <label>＊お勤め先郵便番号(半角入力、ハイフンあり)</label>
-                                    <input type="text" name="employerZipCode" placeholder="123-4567" th:value="${form.employerZipCode}"/>
-                                </div>
-                                <div class="field" th:classappend="${form.hasErrors('employerAddress')} ? 'error'">
-                                    <label>＊お勤め先住所(半角入力)</label>
-                                    <input type="text" name="employerAddress" th:value="${form.employerAddress}"/>
-                                </div>
-                                <div class="field" th:classappend="${form.hasErrors('employerPhoneNumber')} ? 'error'">
-                                    <label>＊お勤め先電話番号(半角入力)</label>
-                                    <input type="tel" pattern="[\d-]*" name="employerPhoneNumber" placeholder="010-222-3333" th:value="${form.employerPhoneNumber}"/>
-                                </div>
 
                                 <div>
                                     <div style = "float:left; padding-right: 4pt; width: 50%;">
@@ -60,6 +48,20 @@
                                         </div>
                                     </div>
                                 </div>
+
+                                <div class="field" th:classappend="${form.hasErrors('employerZipCode')} ? 'error'">
+                                    <label>＊お勤め先郵便番号(半角入力、ハイフンあり)</label>
+                                    <input type="text" name="employerZipCode" placeholder="123-4567" th:value="${form.employerZipCode}"/>
+                                </div>
+                                <div class="field" th:classappend="${form.hasErrors('employerAddress')} ? 'error'">
+                                    <label>＊お勤め先住所(半角入力)</label>
+                                    <input type="text" name="employerAddress" th:value="${form.employerAddress}"/>
+                                </div>
+                                <div class="field" th:classappend="${form.hasErrors('employerPhoneNumber')} ? 'error'">
+                                    <label>＊お勤め先電話番号(半角入力)</label>
+                                    <input type="tel" pattern="[\d-]*" name="employerPhoneNumber" placeholder="010-222-3333" th:value="${form.employerPhoneNumber}"/>
+                                </div>
+
                                 <div class="field" th:classappend="${form.hasErrors('employeeLength')} ? 'error'">
                                     <label>＊勤続年数</label>
                                     <input type="text" class="number" name="employeeLength" th:value="${form.employeeLength}"/><span class="unit">年</span >
