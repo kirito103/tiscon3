@@ -7,6 +7,7 @@
     <title>新規作成</title>
 
     <script src="/assets/js/metrixir.client.js"></script>
+    <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
 </head>
 <body>
 <div class="full height image" layout:fragment="content">
@@ -62,7 +63,7 @@
                             <div style="border-style: solid ; border-width: 1px; padding: 10pt; border-radius: .28571429rem; border-color: rgba(0, 100, 150, .5); margin-bottom: 3px;">
                                 <div class="field" th:classappend="${form.hasErrors('zipCode')} ? 'error'">
                                     <label>*郵便番号(半角入力、ハイフンあり)</label>
-                                    <input type="text" class="zipcode" name="zipCode" placeholder="123-4567" required th:value="${form.zipCode}"/>
+                                    <input type="text" class="zipcode" name="zipCode"  size="10" maxlength="8" onKeyUp="AjaxZip3.zip2addr(this,'','address','address');" placeholder="123-4567" required th:value="${form.zipCode}"/>
                                 </div>
                                 <div class="field" th:classappend="${form.hasErrors('address')} ? 'error'">
                                     <label>*ご住所(半角入力、ハイフンあり)</label>
