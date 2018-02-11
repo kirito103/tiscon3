@@ -55,14 +55,14 @@
                             </div>
                             <div style="border-style: solid ; border-width: 1px; padding: 10pt; border-radius: .28571429rem; border-color: rgba(0, 100, 150, .5); margin-bottom: 3px;">
                                 <div class="field" th:classappend="${form.hasErrors('dateOfBirth')} ? 'error'">
-                                    <label>*生年月日(半角入力)</label>
+                                    <label>*生年月日(半角入力、スラッシュあり)</label>
                                     <input type="text" name="dateOfBirth" placeholder="1997/02/12" required th:value="${form.dateOfBirth}"/>
                                 </div>
                             </div>
                             <div style="border-style: solid ; border-width: 1px; padding: 10pt; border-radius: .28571429rem; border-color: rgba(0, 100, 150, .5); margin-bottom: 3px;">
                                 <div class="field" th:classappend="${form.hasErrors('zipCode')} ? 'error'">
-                                    <label>*郵便番号(半角入力)</label>
-                                    <input type="text" class="zipcode" name="zipCode" placeholder="◯◯◯-◯◯◯◯" required th:value="${form.zipCode}"/>
+                                    <label>*郵便番号(半角入力、ハイフンあり)</label>
+                                    <input type="text" class="zipcode" name="zipCode" placeholder="123-4567" required th:value="${form.zipCode}"/>
                                 </div>
                                 <div class="field" th:classappend="${form.hasErrors('address')} ? 'error'">
                                     <label>*ご住所(半角入力、ハイフンあり)</label>
@@ -73,11 +73,11 @@
                                 <label>電話番号</label>
                                 <div class="field" th:classappend="${form.hasErrors('homePhoneNumber')} ? 'error'">
                                     <label>*自宅電話番号(半角入力、ハイフンあり)</label>
-                                    <input type="tel" pattern="[\d-]*" name="homePhoneNumber" required placeholder="03-123-4567" th:value="${form.homePhoneNumber}"/>
+                                    <input type="tel" pattern="[\d-]*" name="homePhoneNumber" required placeholder="010-234-5678" th:value="${form.homePhoneNumber}"/>
                                 </div>
                                 <div class="field" th:classappend="${form.hasErrors('mobilePhoneNumber')} ? 'error'">
                                     <label>*携帯電話番号(半角入力)</label>
-                                    <input type="tel" pattern="[\d-]*" name="mobilePhoneNumber" required placeholder="090-123-4567" th:value="${form.mobilePhoneNumber}"/>
+                                    <input type="tel" pattern="[\d-]*" name="mobilePhoneNumber" required placeholder="010-234-5678" th:value="${form.mobilePhoneNumber}"/>
                                 </div>
                             </div>
                             <div style="border-style: solid ; border-width: 1px; padding: 10pt; border-radius: .28571429rem; border-color: rgba(0, 100, 150, .5); margin-bottom: 3px;">
@@ -96,7 +96,7 @@
                             <div style="border-style: solid ; border-width: 1px; padding: 10pt; border-radius: .28571429rem; border-color: rgba(0, 100, 150, .5); margin-bottom: 3px;">
 
                                 <div class="field" th:classappend="${form.hasErrors('houseClassification')} ? 'error'">
-                                    <label>お住まい</label>
+                                    <label>＊お住まい</label>
                                     <table>
                                         <tr>
                                             <td><input type="radio" name="houseClassification" value="自己所有" th:checked="${form.houseClassification}=='自己所有'"/>本人名義の一戸建・マンション　</td>
@@ -119,7 +119,7 @@
                             <div style="border-style: solid ; border-width: 1px; padding: 10pt; border-radius: .28571429rem; border-color: rgba(0, 100, 150, .5); margin-bottom: 3px;">
 
                                 <div class="field" th:classappend="${form.hasErrors('debt')} ? 'error'">
-                                    <label>*ローン等のお借り入れ金額</label>
+                                    <label>*ローン等のお借り入れ金額　(直接の入力可)</label>
                                     <div>
                                         <div style = "float:left; padding-right: 4pt;">
                                         <input type="range" value="1" min="0" max="10000" step="1"
@@ -133,7 +133,7 @@
 
                                 </div>
                                 <div class="field" th:classappend="${form.hasErrors('income')} ? 'error'">
-                                    <label>*昨年の所得</label>
+                                    <label>*昨年の所得　(直接の入力可)</label>
                                     <div style = "padding-bottom: 21pt">
                                         <div style = "float:left; padding-right: 4pt;">
                                             <input type="range" value="1" min="0" max="10000" step="1"
@@ -149,7 +149,7 @@
                             <div style="border-style: solid ; border-width: 1px; padding: 10pt; border-radius: .28571429rem; border-color: rgba(0, 100, 150, .5); margin-bottom: 3px;">
 
                                 <div class="field" th:classappend="${form.hasErrors('job')} ? 'error'">
-                                    <label>ご職業</label>
+                                    <label>＊ご職業</label>
                                     <table>
                                         <tr>
                                             <td><input type="radio" name="job" value="経営自営" th:checked="${form.job}=='経営自営'"/>経営・自営業　</td>
