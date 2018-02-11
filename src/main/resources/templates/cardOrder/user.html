@@ -39,11 +39,11 @@
 
                                 <div class="field" th:classappend="${form.hasErrors('kanaName')} ? 'error'">
                                     <label>*お名前（カナ）例：ヤマダタロウ</label>
-                                    <input type="text" name="kanaName" placeholder="ヤマダタロウ" required th:value="${form.kanaName}"/>
+                                    <input type="text" name="kanaName" pattern="^[ァ-ン]+$" placeholder="ヤマダタロウ" required th:value="${form.kanaName}"/>
                                 </div>
                                 <div class="field" th:classappend="${form.hasErrors('alphabetName')} ? 'error'">
                                     <label>*お名前（ローマ字）例：yamadatarou</label>
-                                    <input type="text" name="alphabetName" placeholder="yamadatarou" required th:value="${form.alphabetName}"/>
+                                    <input pattern="^[0-9A-Za-z]+$" title="半角英数字でご入力ください。" name="alphabetName" placeholder="yamadatarou" required th:value="${form.alphabetName}"/>
                                 </div>
                             </div>
 
@@ -71,6 +71,7 @@
                                 </div>
                             </div>
                             <div style="border-style: solid ; border-width: 1px; padding: 10pt; border-radius: .28571429rem; border-color: rgba(0, 100, 150, .5); margin-bottom: 3px;">
+                                <label>電話番号</label>
                                 <div class="field" th:classappend="${form.hasErrors('homePhoneNumber')} ? 'error'">
                                     <label>*自宅電話番号(半角入力、ハイフンあり)</label>
                                     <input type="tel" pattern="[\d-]*" name="homePhoneNumber" required placeholder="010-234-5678" th:value="${form.homePhoneNumber}"/>
