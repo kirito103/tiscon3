@@ -45,6 +45,26 @@
                                     <label>＊お勤め先電話番号(半角入力)</label>
                                     <input type="tel" pattern="[\d-]*" name="employerPhoneNumber" placeholder="045-123-4567" th:value="${form.employerPhoneNumber}"/>
                                 </div>
+
+                                <div>
+                                    <div style = "float:left; padding-right: 4pt; width: 50%;">
+                                        <div class="field" th:classappend="${form.hasErrors('department')} ? 'error'">
+                                            <label>＊所属部署</label>
+                                            <input type="text" name="department" th:value="${form.department}"/>
+                                        </div>
+                                    </div>
+                                    <div style = "float:left; width: 50%;">
+                                        <div class="field" th:classappend="${form.hasErrors('position')} ? 'error'">
+                                            <label>＊役職</label>
+                                            <input type="text" name="position" th:value="${form.position}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="field" th:classappend="${form.hasErrors('employeeLength')} ? 'error'">
+                                    <label>＊勤続年数</label>
+                                    <input type="text" class="number" name="employeeLength" th:value="${form.employeeLength}"/><span class="unit">年</span >
+                                </div>
+
                                 <div class="field" th:classappend="${form.hasErrors('industryType')} ? 'error'">
                                     <label>業種</label>
                                     <table>
@@ -106,18 +126,6 @@
                                     <div>
                                         <input type="radio" name="companySize" th:field="${form.companySize}" value="500" th:checked="${form.companySize}=='500'"/>５００名～
                                     </div>
-                                </div>
-                                <div class="field" th:classappend="${form.hasErrors('department')} ? 'error'">
-                                    <label>＊所属部署</label>
-                                    <input type="text" name="department" th:value="${form.department}"/>
-                                </div>
-                                <div class="field" th:classappend="${form.hasErrors('position')} ? 'error'">
-                                    <label>＊役職</label>
-                                    <input type="text" name="position" th:value="${form.position}"/>
-                                </div>
-                                <div class="field" th:classappend="${form.hasErrors('employeeLength')} ? 'error'">
-                                    <label>＊勤続年数</label>
-                                    <input type="text" class="number" name="employeeLength" th:value="${form.employeeLength}"/><span class="unit">年</span >
                                 </div>
                             </div>
 
