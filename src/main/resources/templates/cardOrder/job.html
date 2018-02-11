@@ -52,7 +52,9 @@
 
                                 <div class="field" th:classappend="${form.hasErrors('employerZipCode')} ? 'error'">
                                     <label>＊お勤め先郵便番号(半角入力、ハイフンあり)</label>
+                                    <div style = "width: 15%">
                                     <input type="text" name="employerZipCode" size="10" maxlength="8" onKeyUp="AjaxZip3.zip2addr(this,'','employerAddress','employerAddress');" placeholder="123-4567" th:value="${form.employerZipCode}"/>
+                                    </div>
                                 </div>
                                 <div class="field" th:classappend="${form.hasErrors('employerAddress')} ? 'error'">
                                     <label>＊お勤め先住所(半角入力)</label>
@@ -60,12 +62,16 @@
                                 </div>
                                 <div class="field" th:classappend="${form.hasErrors('employerPhoneNumber')} ? 'error'">
                                     <label>＊お勤め先電話番号(半角入力)</label>
+                                    <div style = "width: 20%">
                                     <input type="tel" pattern="[\d-]*" name="employerPhoneNumber" placeholder="010-222-3333" th:value="${form.employerPhoneNumber}"/>
+                                    </div>
                                 </div>
 
                                 <div class="field" th:classappend="${form.hasErrors('employeeLength')} ? 'error'">
                                     <label>＊勤続年数</label>
-                                    <input type="text" class="number" name="employeeLength" th:value="${form.employeeLength}"/><span class="unit">年</span >
+                                        <input type="text" class="number" name="employeeLength" th:value="${form.employeeLength}"/><span class="unit">年</span >
+
+
                                 </div>
 
                                 <div class="field" th:classappend="${form.hasErrors('industryType')} ? 'error'">
